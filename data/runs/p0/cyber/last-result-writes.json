@@ -1,0 +1,122 @@
+[
+  {
+    "user": "root",
+    "uid": 0,
+    "wrote_last_result": true,
+    "stderr": ""
+  },
+  {
+    "user": "daemon",
+    "uid": 1,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "bin",
+    "uid": 2,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "sys",
+    "uid": 3,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "sync",
+    "uid": 4,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "games",
+    "uid": 5,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "man",
+    "uid": 6,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "lp",
+    "uid": 7,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "mail",
+    "uid": 8,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "news",
+    "uid": 9,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "uucp",
+    "uid": 10,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "proxy",
+    "uid": 13,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "www-data",
+    "uid": 33,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "backup",
+    "uid": 34,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "list",
+    "uid": 38,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "irc",
+    "uid": 39,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "gnats",
+    "uid": 41,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "_apt",
+    "uid": 100,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "agent",
+    "uid": 1000,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  },
+  {
+    "user": "verify",
+    "uid": 1001,
+    "wrote_last_result": false,
+    "stderr": "touch: cannot touch '/root/last_result.json': Permission denied\n"
+  }
+]

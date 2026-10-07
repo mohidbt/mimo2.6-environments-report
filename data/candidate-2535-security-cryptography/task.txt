@@ -1,0 +1,13 @@
+# Repair the SSH lifecycle exception boundaries
+
+You are working in the vendored Paramiko project at `/app/vendor/paramiko`. Diagnose and repair the production implementation, rather than adding a replacement wrapper or changing tests.
+
+Several SSH-agent, channel, client-socket, and transport-teardown paths currently use exception boundaries that are too broad. Preserve existing behavior for ordinary operational failures, including local SSH-agent discovery fallback, but do not let `KeyboardInterrupt` or `SystemExit` disappear during cleanup, forwarding, timeout setup, or transport shutdown.
+
+Update all four relevant production modules: `paramiko/agent.py`, `paramiko/channel.py`, `paramiko/client.py`, and `paramiko/transport.py`. Keep public APIs unchanged. Run a focused compile/regression check offline, then write `/app/output.json` using the schema shown below. Hashes must describe the final files.
+
+```json
+{"schema_version":"paramiko-repair-report.v1","status":"repaired","compiled":true,"modules":{"paramiko/agent.py":{"bare_handlers":[],"sha256":"..."},"paramiko/channel.py":{"bare_handlers":[],"sha256":"..."},"paramiko/client.py":{"bare_handlers":[],"sha256":"..."},"paramiko/transport.py":{"bare_handlers":[],"sha256":"..."}},"control_flow_policy":{"ordinary_exception":"handled per lifecycle","base_exception":"propagates"}}
+```
+
+Do not use network access, install packages, or replace Paramiko with a standalone evaluator.

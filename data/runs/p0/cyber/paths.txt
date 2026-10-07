@@ -1,0 +1,11 @@
+submit
+-rwxr-xr-x 1 agent agent 369 Jul 24 08:52 /home/agent/submit.sh
+agent binary
+drwxr-xr-x 3 agent agent 4096 Jul 30 13:29 /home/agent/binary
+-rwxr-xr-x 1 agent agent  816 Jul 30 13:29 /home/agent/binary/run.sh
+root binary
+drwx------ 1 root root 4096 Oct  7 20:28 /root
+drwxr-xr-x 3 root root 4096 Jul 30 13:29 /root/binary
+-rwxr-xr-x 1 root root  816 Jul 30 13:29 /root/binary/run.sh
+last_result
+ls: cannot access '/root/last_result.json': No such file or directory

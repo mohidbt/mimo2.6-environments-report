@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/repo
+collecting ... collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+____ ERROR collecting usercase-test-coderl/test_bidirectional_friendship.py ____
+ImportError while importing test module '/workspace/repo/usercase-test-coderl/test_bidirectional_friendship.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+usercase-test-coderl/test_bidirectional_friendship.py:47: in <module>
+    from friends.models import Friendship, FriendshipInvitation, FriendshipInvitationHistory, friend_set_for
+E   ImportError: cannot import name 'friend_set_for' from 'friends.models' (/workspace/repo/friends/models.py)
+=========================== short test summary info ============================
+ERROR usercase-test-coderl/test_bidirectional_friendship.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.96s ===============================

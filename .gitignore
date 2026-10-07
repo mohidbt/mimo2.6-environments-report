@@ -1,0 +1,14 @@
+plans/
+shareout/
+
+# Local research notes and checkouts. Not needed to rerun the one task.
+findings.json
+upstream/
+vendor/
+
+# Dataset dumps and the image. Fetch scripts rebuild these.
+data/*.parquet
+data/general/
+data/.cache/
+data/image-55/
+data/image-55.tar

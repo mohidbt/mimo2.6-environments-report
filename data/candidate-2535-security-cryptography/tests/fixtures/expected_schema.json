@@ -1,0 +1,1 @@
+{"schema_version":"paramiko-repair-report.v1","required_modules":["paramiko/agent.py","paramiko/channel.py","paramiko/client.py","paramiko/transport.py"]}

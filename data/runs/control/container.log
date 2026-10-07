@@ -1,0 +1,166 @@
+FFFFF                                                                    [100%]
+=================================== FAILURES ===================================
+__________________________ test_gate_artifact_schema ___________________________
+
+    def test_gate_artifact_schema():
+>       report = _report()
+                 ^^^^^^^^^
+
+/tests/test_outputs.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tests/test_outputs.py:17: in _report
+    return json.loads(Path("/app/output.json").read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/app/output.json'), mode = 'r', buffering = -1
+encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+____________________ test_core_all_modules_compile_and_hash ____________________
+
+    def test_core_all_modules_compile_and_hash():
+>       report = _report()
+                 ^^^^^^^^^
+
+/tests/test_outputs.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tests/test_outputs.py:17: in _report
+    return json.loads(Path("/app/output.json").read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/app/output.json'), mode = 'r', buffering = -1
+encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'
+
+/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_______________ test_core_no_bare_handlers_and_expected_taxonomy _______________
+
+    def test_core_no_bare_handlers_and_expected_taxonomy():
+>       assert not any(handler.type is None for relative in MODULES for handler in _handlers(relative))
+E       assert not True
+E        +  where True = any(<generator object test_core_no_bare_handlers_and_expected_taxonomy.<locals>.<genexpr> at 0x7ffffe6391c0>)
+
+/tests/test_outputs.py:39: AssertionError
+______________ test_edge_cleanup_boundaries_catch_exception_only _______________
+
+    def test_edge_cleanup_boundaries_catch_exception_only():
+        for relative in ("paramiko/channel.py", "paramiko/client.py", "paramiko/transport.py"):
+>           types = [ast.unparse(handler.type) for handler in _handlers(relative)]
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/ast.py:1796: in unparse
+    return unparser.visit(ast_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/ast.py:859: in visit
+    self.traverse(node)
+/usr/local/lib/python3.12/ast.py:850: in traverse
+    super().visit(node)
+/usr/local/lib/python3.12/ast.py:407: in visit
+    return visitor(node)
+           ^^^^^^^^^^^^^
+/usr/local/lib/python3.12/ast.py:411: in generic_visit
+    for field, value in iter_fields(node):
+                        ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = None
+
+    def iter_fields(node):
+        """
+        Yield a tuple of ``(fieldname, value)`` for each field in ``node._fields``
+        that is present on *node*.
+        """
+>       for field in node._fields:
+                     ^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute '_fields'
+
+/usr/local/lib/python3.12/ast.py:262: AttributeError
+___________ test_edge_agent_discovery_does_not_swallow_control_flow ____________
+
+    def test_edge_agent_discovery_does_not_swallow_control_flow():
+        handlers = _handlers("paramiko/agent.py")
+>       assert any(ast.unparse(handler.type) == "OSError" for handler in handlers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/tests/test_outputs.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/tests/test_outputs.py:54: in <genexpr>
+    assert any(ast.unparse(handler.type) == "OSError" for handler in handlers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/ast.py:1796: in unparse
+    return unparser.visit(ast_obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/lib/python3.12/ast.py:859: in visit
+    self.traverse(node)
+/usr/local/lib/python3.12/ast.py:850: in traverse
+    super().visit(node)
+/usr/local/lib/python3.12/ast.py:407: in visit
+    return visitor(node)
+           ^^^^^^^^^^^^^
+/usr/local/lib/python3.12/ast.py:411: in generic_visit
+    for field, value in iter_fields(node):
+                        ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = None
+
+    def iter_fields(node):
+        """
+        Yield a tuple of ``(fieldname, value)`` for each field in ``node._fields``
+        that is present on *node*.
+        """
+>       for field in node._fields:
+                     ^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute '_fields'
+
+/usr/local/lib/python3.12/ast.py:262: AttributeError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:469
+  /usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:469: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/nodeids: [Errno 30] Read-only file system: '/tests/pytest-cache-files-lp1j9zff'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+../usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:423
+  /usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:423: PytestCacheWarning: could not create cache path /tests/.pytest_cache/v/cache/lastfailed: [Errno 30] Read-only file system: '/tests/pytest-cache-files-svwi0grq'
+    config.cache.set("cache/lastfailed", self.lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_gate_artifact_schema - FileNotFoundErro...
+FAILED ../tests/test_outputs.py::test_core_all_modules_compile_and_hash - Fil...
+FAILED ../tests/test_outputs.py::test_core_no_bare_handlers_and_expected_taxonomy
+FAILED ../tests/test_outputs.py::test_edge_cleanup_boundaries_catch_exception_only
+FAILED ../tests/test_outputs.py::test_edge_agent_discovery_does_not_swallow_control_flow
+5 failed, 2 warnings in 0.38s

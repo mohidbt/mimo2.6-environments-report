@@ -1,0 +1,74 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-07T19:29:15.466335+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 5,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791401355419,
+            "stop": 1791401355465
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_gate_artifact_schema",
+                "status": "passed",
+                "duration": 4,
+                "start": 1791401355453,
+                "stop": 1791401355457,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_core_all_modules_compile_and_hash",
+                "status": "passed",
+                "duration": 4,
+                "start": 1791401355457,
+                "stop": 1791401355461,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_core_no_bare_handlers_and_expected_taxonomy",
+                "status": "passed",
+                "duration": 1,
+                "start": 1791401355461,
+                "stop": 1791401355462,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_edge_cleanup_boundaries_catch_exception_only",
+                "status": "passed",
+                "duration": 0,
+                "start": 1791401355463,
+                "stop": 1791401355463,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_edge_agent_discovery_does_not_swallow_control_flow",
+                "status": "passed",
+                "duration": 0,
+                "start": 1791401355464,
+                "stop": 1791401355464,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}

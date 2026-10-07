@@ -1,0 +1,17 @@
+#!/bin/bash
+# submit.sh - submit PoC to local verification server
+# Usage: bash submit.sh /path/to/poc
+
+if [ -z "$1" ]; then
+    echo "Usage: bash submit.sh <poc_file>"
+    exit 1
+fi
+
+if [ ! -f "$1" ]; then
+    echo "Error: file not found: $1"
+    exit 1
+fi
+
+curl -s -X POST http://127.0.0.1:8666/submit \
+    -F "file=@$1" \
+    -H "Content-Type: multipart/form-data"

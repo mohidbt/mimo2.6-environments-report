@@ -1,0 +1,89 @@
+{
+    "reportFormat": "CTRF",
+    "specVersion": "0.0.0",
+    "timestamp": "2026-10-07T19:29:15.490151+00:00",
+    "generatedBy": "pytest",
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "9.1.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 0,
+            "failed": 5,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1791401355116,
+            "stop": 1791401355489
+        },
+        "environment": {
+            "buildName": "Pytest JSON CTRF Report",
+            "buildNumber": "000",
+            "buildUrl": "https://ctrf.io"
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_gate_artifact_schema",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 46,
+                "start": 1791401355153,
+                "stop": 1791401355199,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_gate_artifact_schema():\n>       report = _report()\n                 ^^^^^^^^^\n\n/tests/test_outputs.py:21: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/tests/test_outputs.py:17: in _report\n    return json.loads(Path(\"/app/output.json\").read_text())\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.12/pathlib.py:1027: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/app/output.json'), mode = 'r', buffering = -1\nencoding = 'locale', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'\n\n/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_core_all_modules_compile_and_hash",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 32,
+                "start": 1791401355199,
+                "stop": 1791401355231,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_core_all_modules_compile_and_hash():\n>       report = _report()\n                 ^^^^^^^^^\n\n/tests/test_outputs.py:31: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/tests/test_outputs.py:17: in _report\n    return json.loads(Path(\"/app/output.json\").read_text())\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.12/pathlib.py:1027: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/app/output.json'), mode = 'r', buffering = -1\nencoding = 'locale', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'\n\n/usr/local/lib/python3.12/pathlib.py:1013: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_core_no_bare_handlers_and_expected_taxonomy",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 8,
+                "start": 1791401355231,
+                "stop": 1791401355239,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_core_no_bare_handlers_and_expected_taxonomy():\n>       assert not any(handler.type is None for relative in MODULES for handler in _handlers(relative))\nE       assert not True\nE        +  where True = any(<generator object test_core_no_bare_handlers_and_expected_taxonomy.<locals>.<genexpr> at 0x7ffffe6391c0>)\n\n/tests/test_outputs.py:39: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_edge_cleanup_boundaries_catch_exception_only",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 124,
+                "start": 1791401355239,
+                "stop": 1791401355363,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_edge_cleanup_boundaries_catch_exception_only():\n        for relative in (\"paramiko/channel.py\", \"paramiko/client.py\", \"paramiko/transport.py\"):\n>           types = [ast.unparse(handler.type) for handler in _handlers(relative)]\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.12/ast.py:1796: in unparse\n    return unparser.visit(ast_obj)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.12/ast.py:859: in visit\n    self.traverse(node)\n/usr/local/lib/python3.12/ast.py:850: in traverse\n    super().visit(node)\n/usr/local/lib/python3.12/ast.py:407: in visit\n    return visitor(node)\n           ^^^^^^^^^^^^^\n/usr/local/lib/python3.12/ast.py:411: in generic_visit\n    for field, value in iter_fields(node):\n                        ^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nnode = None\n\n    def iter_fields(node):\n        \"\"\"\n        Yield a tuple of ``(fieldname, value)`` for each field in ``node._fields``\n        that is present on *node*.\n        \"\"\"\n>       for field in node._fields:\n                     ^^^^^^^^^^^^\nE       AttributeError: 'NoneType' object has no attribute '_fields'\n\n/usr/local/lib/python3.12/ast.py:262: AttributeError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_edge_agent_discovery_does_not_swallow_control_flow",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 125,
+                "start": 1791401355363,
+                "stop": 1791401355488,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_edge_agent_discovery_does_not_swallow_control_flow():\n        handlers = _handlers(\"paramiko/agent.py\")\n>       assert any(ast.unparse(handler.type) == \"OSError\" for handler in handlers)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n/tests/test_outputs.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/tests/test_outputs.py:54: in <genexpr>\n    assert any(ast.unparse(handler.type) == \"OSError\" for handler in handlers)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.12/ast.py:1796: in unparse\n    return unparser.visit(ast_obj)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n/usr/local/lib/python3.12/ast.py:859: in visit\n    self.traverse(node)\n/usr/local/lib/python3.12/ast.py:850: in traverse\n    super().visit(node)\n/usr/local/lib/python3.12/ast.py:407: in visit\n    return visitor(node)\n           ^^^^^^^^^^^^^\n/usr/local/lib/python3.12/ast.py:411: in generic_visit\n    for field, value in iter_fields(node):\n                        ^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nnode = None\n\n    def iter_fields(node):\n        \"\"\"\n        Yield a tuple of ``(fieldname, value)`` for each field in ``node._fields``\n        that is present on *node*.\n        \"\"\"\n>       for field in node._fields:\n                     ^^^^^^^^^^^^\nE       AttributeError: 'NoneType' object has no attribute '_fields'\n\n/usr/local/lib/python3.12/ast.py:262: AttributeError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}
