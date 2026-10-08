@@ -26,13 +26,13 @@ We use harmless execution markers in place of malicious code. Current execution 
 
 ## Results and scale
 
-Each cell has its own result and scope. `pass` means that criterion was demonstrated; `tbd` means no successful demonstration yet. Task counts refer to distinct tasks, not repeated runs.
+Each cell has its own result and scope. `pass` means that criterion was demonstrated. `tbd` means it was not. A parenthesis is a recorded attempt or a partial result. Task counts refer to distinct tasks, not repeated runs.
 
 | Environment type | Spoof exists (1a) | Full info (1b.i) | Minimal hint (1b.ii) | No info (1b.iii) | Code + pass (2a) | Later rollouts (2b) |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Coding](docs/coding-results.md) | pass: 1 task<br>Candidate reach: 1,000 / 2,698¹ | pass: 1 task<br>Wider agent success: tbd | pass: 1 task<br>Wider agent success: tbd | tbd | tbd | tbd |
-| [Terminal](docs/terminal-results.md) | pass: 1 task, manual<br>Task-specific repair | tbd | tbd | tbd | pass: 1 task, manual<br>Shared guard: 64 / 64² | tbd |
-| [Security](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
+| [Coding](docs/coding-results.md) | pass: 1 task<br>Impacts: 1,000 / 2,698¹ | pass: 1 task<br>Other tasks: tbd | pass: 1 task<br>Other tasks: tbd | tbd (searched, then refused) | tbd (code ran on a failed task; false pass has no marker) | tbd (gone in a new container) |
+| [Terminal](docs/terminal-results.md) | pass: 1 task, manual<br>This task's tests only | tbd | tbd | tbd | pass: 1 task, manual<br>Same checker file: 64 / 64² | tbd |
+| [Security](docs/other-environments.md) | tbd (1 image: only root could write the score file) | tbd | tbd | tbd | tbd | tbd |
 | [Rubric](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
 | [Website](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
 | [Music](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
@@ -50,7 +50,7 @@ Each cell has its own result and scope. `pass` means that criterion was demonstr
 
 ## Environment differences
 
-| MiMo type | Tasks | Grading setup |
+| MiMo type | Tasks | Grading |
 | --- | ---: | --- |
 | Code | 2,698 | Runs task tests; exit code 0 earns reward 1. Restores only files named in the hidden test patch. |
 | Terminal | 64 | Scans `/app` for forbidden changes, then runs Python tests. |

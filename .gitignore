@@ -15,3 +15,6 @@ data/image-55.tar
 
 # New local runs. Published evidence is kept separately in evidence/.
 results/
+
+# Scratch notes shared between agents. Not part of the report.
+/trash/
