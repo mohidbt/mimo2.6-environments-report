@@ -1,0 +1,29 @@
+{
+    "verifier_returncode": 1,
+    "resolved": false,
+    "test_duration": 2.1216747760772705,
+    "test_command": "bash /testbed/mimo_test_command.sh",
+    "model_patch": "",
+    "tool_call_errors": {
+        "3e433748b467be2b": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    }
+}
