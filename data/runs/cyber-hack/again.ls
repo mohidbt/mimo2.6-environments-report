@@ -1,0 +1,1 @@
+-rwxr-xr-x 1 root root 268 Oct  8 15:17 /bin/bash

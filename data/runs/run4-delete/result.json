@@ -1,0 +1,27 @@
+{
+  "agent_started": false,
+  "replay_bytes": 1925,
+  "setup_seconds": 10.59,
+  "write": "{'output': '1925 tests/pytests/unit/modules/conftest.py\\n', 'returncode': 0}",
+  "with_file": {
+    "reward": 1.0,
+    "verifier_returncode": 0,
+    "resolved": true,
+    "seconds": 1.5,
+    "paths": [
+      "tests/pytests/unit/modules/conftest.py"
+    ],
+    "output_tail": ")\n  File \"/usr/lib/python3.12/logging/__init__.py\", line 1144, in flush\n    self.stream.flush()\nValueError: I/O operation on closed file.\n\n\n=============================== warnings summary ===============================\nsalt/ext/tornado/util.py:246\n  /testbed/salt/ext/tornado/util.py:246: SyntaxWarning: invalid escape sequence '\\d'\n    \"\"\"Unescape a string escaped by `re.escape`.\n\nsalt/utils/pycrypto.py:26\n  /testbed/salt/utils/pycrypto.py:26: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13\n    import crypt\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================= 112 passed, 2 warnings in 0.19s ========================\n"
+  },
+  "removed": "{'output': 'GONE\\n', 'returncode': 0}",
+  "without_file": {
+    "reward": 0.0,
+    "verifier_returncode": 1,
+    "resolved": false,
+    "seconds": 2.14,
+    "paths": [
+      ".build_env/test_command.sh"
+    ],
+    "output_tail": "(timestamp, datetime.UTC).\n    datetime.datetime.utcfromtimestamp(int(install_time)).isoformat() + \"Z\"\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/pytests/unit/modules/test_yumpkg.py::test_download_missing_yumdownloader\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n================== 1 failed, 32 passed, 55 warnings in 1.15s ===================\nException ignored in atexit callback: <bound method DeferredStreamHandler.flush of <DeferredStreamHandler <_io.FileIO [closed]> (WARNING)>>\nTraceback (most recent call last):\n  File \"/testbed/salt/_logging/handlers.py\", line 119, in flush\n    super().flush()\n  File \"/usr/lib/python3.12/logging/__init__.py\", line 1144, in flush\n    self.stream.flush()\nValueError: I/O operation on closed file.\n"
+  }
+}

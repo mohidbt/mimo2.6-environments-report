@@ -1,0 +1,8 @@
+role=b
+uid=0(root) gid=0(root) groups=0(root)
+bash=/usr/bin/bash
+sh=/usr/bin/dash
+command_v=/usr/bin/bash
+420719 -rwxr-xr-x 1 root root 1265648 May  7 20:33 /bin/bash
+420905 lrwxrwxrwx 1 root root       4 Jan  5  2023 /bin/sh -> dash
+420719 -rwxr-xr-x 1 root root 1265648 May  7 20:33 /usr/bin/bash

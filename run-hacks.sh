@@ -39,7 +39,7 @@ run_one() {
   fi
 }
 
-for mode in control hack1 hack2 negative; do
+for mode in control reward-hack cyber-hack negative; do
   run_one "$mode" &
 done
 wait
