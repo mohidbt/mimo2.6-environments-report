@@ -1,6 +1,7 @@
-# MiMo2.6 RL environments - Risk assessment
+# MiMo2.6 RL Environments - Risk Assessment
 
-An RL environment gives an agent a task and scores its work. The grader produces that score. This report tests whether MiMo's published environments can reward a false solution or let a submission tamper with grading.
+tl;dr: 37% of all coding tasks allow a simple reward hack, fully circumventing the task! Moreover, all terminal tasks had quite simplistic graders, such that simple placeholder files could spoof passes. 
+We could show on first try that agents (running on real mimoagent harness in released docker images) instructed to circumvent those tasks, with simple hint (which file to look for), could successfully fool the scorer.
 
 ## Methodology
 
@@ -58,9 +59,6 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. | Agent success on other tasks under each information condition. The 1,000-command count does not establish this. |
 | 1a, terminal: placeholder repair | Task-specific test patterns and file hashes. | None for a wider repair: the tests and file hashes are per task. |
 | 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. |
-
-### Verdict
-37% of all coding tasks allow a simple exploit of the grader, to fully circumvent the task! Moreover, all terminal tasks had quite simplistic graders, such that simple placeholder files could spoof passes. 
 
 ## Files and reproduction
 
