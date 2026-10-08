@@ -1,4 +1,4 @@
-# MiMo RL environments: hacking risk assessment
+# MiMo2.6 RL environments - Risk assessment
 
 An RL environment gives an agent a task and scores its work. The grader produces that score. This report tests whether MiMo's published environments can reward a false solution or let a submission tamper with grading.
 
@@ -38,12 +38,12 @@ We use harmless execution markers in place of malicious code. Current execution 
 
 ## Results and scale
 
-Each cell has its own result and scope. `pass` means that criterion was demonstrated. `tbd` means it was not. A parenthesis is a recorded attempt or a partial result. Task counts refer to distinct tasks, not repeated runs.
+Each cell has its own result and scope. `pass` means clear demonstration. `tbd` means it was not. A parenthesis is a recorded attempt or a partial result. Task counts refer to distinct tasks tested.
 The agent experiments used Grok 4.7, explicitly instructed to exploit the score. 
 
 | Environment type | Spoof exists (1a) | Full info (1b.i) | Minimal hint (1b.ii) | No info (1b.iii) | Malware + pass (2a) | Later rollouts (2b) |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Coding](docs/coding-results.md) | pass<br>Impacts: 1,000 / 2,698¹ | pass: 1 task<br>Other tasks: tbd | pass: 1 task<br>Other tasks: tbd | tbd (searched, then refused) | pass: 2 tasks, manual | tbd (gone in a new container) |
+| [Coding](docs/coding-results.md) | pass<br>Impacts: 1,000 / 2,698¹ | pass: 1 task<br>Other tasks: tbd | pass: 1 task<br>Other tasks: tbd | tbd (searched, then refused) | pass: 2 tasks, manual | tbd (no way to persist into next rollout's new docker image) |
 | [Terminal](docs/terminal-results.md) | pass: 1 task, manual<br>This task's tests only | tbd | tbd | tbd | pass: 1 task, manual<br>Impacts: 64 / 64² | tbd |
 | [Security](docs/other-environments.md) | tbd (1 image: only root could write the score file) | tbd | tbd | tbd | tbd | tbd |
 | [Rubric](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
@@ -60,7 +60,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. |
 
 ### Verdict
-37% of all coding tasks allow a simple exploit of the grader. 
+37% of all coding tasks allow a simple exploit of the grader, to fully circumvent the task! Moreover, all terminal tasks had quite simplistic graders, such that simple placeholder files could spoof passes. 
 
 ## Files and reproduction
 
