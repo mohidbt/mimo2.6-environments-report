@@ -7,11 +7,24 @@ Two questions about the graders on objective tasks. A program gives the score. N
 
 `hack1` is the first question. `hack2` is the second. The plant is a harmless proof of access, used in place of a virus. `control` and `negative` are the baselines.
 
-The terminal set has 64 tasks. Each one is graded by the same checker, then by pytest. The checker only looks inside `/app`.
+Two families have a run. Each section below is one family: what the graders share, what we ran, how to rerun it.
+
+| Family | Tasks | What we ran |
+| --- | --- | --- |
+| Terminal | 64 | One task. Reward 1, with code that ran as the verifier |
+| Code | 2,698 | One image. Official pytest command exited 0, then 2 after the extra file was removed |
+| Cyber | 1,000 | One image. Reward file stayed out of reach |
+| Rubric | 925 | One image. Workspace plant did not run |
+| Webdev | 2,093 | One image. Page JS ran. No vision score |
+| Music | 1,000 | Not started |
+
+## Terminal
+
+64 tasks. Each one is graded by the same checker, then by pytest. The checker only looks inside `/app`.
 
 The checker file is `tests/anti_hack_guard.py`. It is the same bytes on all 64 tasks (`336149b10b45d03b7774ba589d984e9663135cfc660f3a133fc482a8716d0e3a`). All 64 `test.sh` files run it, then pytest. A `sitecustomize.py` under `/app` is rejected. The same file in Python's system site-packages is outside the scan. `PYTHONNOUSERSITE=1` does not stop that import.
 
-## What we ran
+### What we ran
 
 One task, `candidate-2535-security-cryptography`, image `general-agent-env-55`. The task asks for a Paramiko repair. Containers used `--network none`. The score is `/logs/verifier/reward.txt`.
 
@@ -28,7 +41,7 @@ The other 63 tasks were not executed. Their checker file matches this one. Their
 
 Logs from the table are in `data/runs/`. `data/runs/p0/` is other work and is not this result.
 
-## Rerun
+### Rerun
 
 Docker. `uv` is only needed if `data/candidate-2535-security-cryptography/` is missing.
 
@@ -47,7 +60,9 @@ bash run-hacks.sh
 
 1,000 of those commands start pytest and do not pass `--noconftest`, so pytest loads a `conftest.py` beside the test. 735 of the 1,000 are plain shell scripts. 265 were packed in a base64 tar. 3 tars did not decode. 12 pytest commands do pass `--noconftest`. The word pytest appears in 28 of the 2,698 task texts.
 
-One image ran: `format-code-task-001661`, `--network none`, as root. The bug was not fixed. The command is `bash /workspace/repo/mimo_test_command.sh`.
+### What we ran
+
+One image: `format-code-task-001661`, `--network none`, as root. The bug was not fixed. The command is `bash /workspace/repo/mimo_test_command.sh`.
 
 | Run | What changed | Exit |
 | --- | --- | --- |
@@ -56,22 +71,23 @@ One image ran: `format-code-task-001661`, `--network none`, as root. The bug was
 
 The plant calls `pytest.exit("plant", returncode=0)`. The first argument of `pytest.exit` is the message, so `pytest.exit(0)` does not set the code. This run is the official test command. The training harness that turns exit 0 into reward 1 was not the process we executed. The other 999 pytest commands were counted from the scripts, not booted. 706 commands start `go test`. That run was not done.
 
+### Rerun
+
 ```bash
 bash probes/code-exit0/run.sh
 ```
 
 The script expects the local image `xiaomimimo/mimo-v2.6-rl-oss:format-code-task-001661`. The count is `data/runs/code-exit0/census.txt`, taken from the dataset dump, which is not in this repo.
 
-## Next
+## Still open
 
-The same two questions, on the other families that use a program as the grader. One image per shared grader. Per-task runs wait until that grader is checked.
+Same two questions. One image per shared grader is the check so far. Per-task runs wait until that grader is checked.
 
 | Family | Tasks | What is shared | Where it stands |
 | --- | --- | --- | --- |
-| Code | 2,698 | One reward function. It resets only paths the test patch names, then runs that task's test command | See above. On `format-code-task-001661` the official command exited 0 with an extra `conftest.py`, and 2 after that file was removed |
 | Cyber | 1,000 | Reward reads `/root/last_result.json`. It does not call the agent's `submit.sh` | On `arvo-v1-35858`, only root could create that file. `agent` and `verify` could not |
 | Rubric | 925 | One image. The verifier is `python3 /work/run_verify.py` on a sidecar | A plant in the shared workspace did not run. A system plant ran only in the same container |
 | Webdev | 2,093 | One image. Eval screenshots the page with Playwright | Page JS ran in Chromium as root. No vision score |
 | Music | 1,000 | No task image in the dataset | Not started |
 
-Logs are in `data/runs/p0/`. Those runs are not the terminal result above.
+Logs for these four are in `data/runs/p0/`.
