@@ -1,0 +1,22 @@
+{
+  "started_utc": "2026-10-08T12:28:37Z",
+  "commit": {
+    "returncode": 0,
+    "stdout": "467f0a19016f0ac4d63b8d17a1f0da9ba07f232c\n",
+    "stderr": ""
+  },
+  "status": {
+    "returncode": 0,
+    "stdout": " M src/mimoagent/environments/datasets/opensource_code.py\n M uv.lock\n",
+    "stderr": ""
+  },
+  "image": {
+    "returncode": 0,
+    "stdout": "[\n    {\n        \"Id\": \"sha256:68220df6bcc1092b495012ff5691a59b0fb07ee90822a1cb4eef714f0575134c\",\n        \"RepoTags\": [\n            \"xiaomimimo/mimo-v2.6-rl-oss:format-code-task-002572\"\n        ],\n        \"RepoDigests\": [\n            \"xiaomimimo/mimo-v2.6-rl-oss@sha256:68220df6bcc1092b495012ff5691a59b0fb07ee90822a1cb4eef714f0575134c\"\n        ],\n        \"Comment\": \"imported from tarball\",\n        \"Created\": \"2026-09-24T04:06:33.000000146+08:00\",\n        \"Config\": {},\n        \"Architecture\": \"amd64\",\n        \"Os\": \"linux\",\n        \"Size\": 4201282670,\n        \"RootFS\": {\n            \"Type\": \"layers\",\n            \"Layers\": [\n                \"sha256:02e8590dde8db258d042ee67e43cadcc6694e44ca1ebbac8796cf96272a73ec0\"\n            ]\n        },\n        \"Metadata\": {\n            \"LastTagTime\": \"2026-10-08T12:17:46.904978228Z\"\n        },\n        \"Descriptor\": {\n            \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n            \"digest\": \"sha256:68220df6bcc1092b495012ff5691a59b0fb07ee90822a1cb4eef714f0575134c\",\n            \"size\": 351\n        }\n    }\n]\n",
+    "stderr": ""
+  },
+  "row_sha256": "558517142ae085c18d789230544fce57182c6499e66f9534f0ecbd97e8e701ca",
+  "config_sha256": "601b76dc04794bc785d649ec8133e31ec517ddb86a31f7709d9518f98e80d8ac",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "method": "make_dataset_env -> setup_environment -> calculate_reward; no agent or model"
+}

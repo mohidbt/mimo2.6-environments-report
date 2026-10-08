@@ -1,0 +1,14 @@
+{
+  "stage": "complete",
+  "agent_started": false,
+  "setup_seconds": 11.310194850000698,
+  "reward": 0.0,
+  "reward_extra_info": {
+    "verifier_returncode": 1,
+    "resolved": false,
+    "test_duration": 2.4180076122283936,
+    "test_command": "bash /testbed/mimo_test_command.sh",
+    "model_patch": ""
+  },
+  "elapsed_seconds": 14.293653448000441
+}

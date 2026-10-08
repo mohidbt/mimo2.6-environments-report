@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "memory.current\n1003073536\nmemory.peak\n1259954176\nmemory.max\n3221225472\nmemory.swap.max\n3221225472\nmemory.events\nlow 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "stderr": ""
+}

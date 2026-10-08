@@ -1,0 +1,16 @@
+Error processing line 1 of /usr/lib/python3/dist-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "<frozen site>", line 201, in addpackage
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+Exit: plant
+Exception ignored in atexit callback: <bound method DeferredStreamHandler.flush of <DeferredStreamHandler <_io.FileIO [closed]> (WARNING)>>
+Traceback (most recent call last):
+  File "/testbed/salt/_logging/handlers.py", line 119, in flush
+    super().flush()
+  File "/usr/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+ValueError: I/O operation on closed file.

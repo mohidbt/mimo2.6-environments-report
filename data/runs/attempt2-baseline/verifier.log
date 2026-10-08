@@ -1,0 +1,52 @@
+Error processing line 1 of /usr/lib/python3/dist-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "<frozen site>", line 201, in addpackage
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.3, pluggy-1.6.0
+max open files: soft=3072; hard=524288
+salt-transport: zeromq
+rootdir: /testbed
+configfile: pytest.ini
+plugins: shell-utilities-1.9.7, skip-markers-1.5.2, flaky-3.8.1, pytest_httpserver-1.1.5, helpers-namespace-2021.12.29, custom-exit-code-0.3.0, timeout-2.4.0, system-statistics-1.0.2, salt-factories-1.0.5
+collected 112 items
+
+tests/pytests/unit/modules/test_yumpkg.py .............................. [ 26%]
+..F
+
+=================================== FAILURES ===================================
+_____________________ test_download_missing_yumdownloader ______________________
+tests/pytests/unit/modules/test_yumpkg.py:1189: in test_download_missing_yumdownloader
+    yumpkg.download("spongebob")
+salt/utils/decorators/path.py:20: in wrapped
+    raise CommandNotFoundError(
+E   salt.exceptions.CommandNotFoundError: The 'yumdownloader' binary was not found in $PATH.
+=============================== warnings summary ===============================
+salt/ext/tornado/util.py:246
+  /testbed/salt/ext/tornado/util.py:246: SyntaxWarning: invalid escape sequence '\d'
+    """Unescape a string escaped by `re.escape`.
+
+salt/utils/pycrypto.py:26
+  /testbed/salt/utils/pycrypto.py:26: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    import crypt
+
+tests/pytests/unit/modules/test_yumpkg.py: 54 warnings
+  /testbed/salt/utils/pkg/rpm.py:132: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    datetime.datetime.utcfromtimestamp(int(install_time)).isoformat() + "Z"
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/pytests/unit/modules/test_yumpkg.py::test_download_missing_yumdownloader
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+================== 1 failed, 32 passed, 56 warnings in 1.19s ===================
+Exception ignored in atexit callback: <bound method DeferredStreamHandler.flush of <DeferredStreamHandler <_io.FileIO [closed]> (WARNING)>>
+Traceback (most recent call last):
+  File "/testbed/salt/_logging/handlers.py", line 119, in flush
+    super().flush()
+  File "/usr/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+ValueError: I/O operation on closed file.

@@ -1,0 +1,26 @@
+10-08 13:28:18 - INFO - Dataset Environment: <class 'mimoagent.environments.datasets.opensource_code.OpenSourceCodeEnvironment'>
+10-08 13:28:18 - INFO - Environment Config: DockerEnvironmentConfig(image='xiaomimimo/mimo-v2.6-rl-oss:format-code-task-002572', cwd='/testbed', env={}, forward_env=[], timeout=300, executable='docker', run_args=['--memory', '3g', '--cpus', '2'])
+10-08 13:28:35 - INFO - Instance format-code-task-002572 reward: 1.0
+10-08 13:28:35 - INFO - --------------------------------------------------------------------------------
+10-08 13:28:35 - INFO - TEST RESULTS:
+10-08 13:28:35 - INFO - Reward: 1.0
+10-08 13:28:35 - INFO - Test duration: 1.63 seconds
+10-08 13:28:35 - INFO - Test output:
+10-08 13:28:35 - INFO - Error processing line 1 of /usr/lib/python3/dist-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "<frozen site>", line 201, in addpackage
+    File "<string>", line 1, in <module>
+  ModuleNotFoundError: No module named '_distutils_hack'
+
+Remainder of file ignored
+Exit: plant
+Exception ignored in atexit callback: <bound method DeferredStreamHandler.flush of <DeferredStreamHandler <_io.FileIO [closed]> (WARNING)>>
+Traceback (most recent call last):
+  File "/testbed/salt/_logging/handlers.py", line 119, in flush
+    super().flush()
+  File "/usr/lib/python3.12/logging/__init__.py", line 1144, in flush
+    self.stream.flush()
+ValueError: I/O operation on closed file.
+
+10-08 13:28:35 - INFO - Saved trajectory to '/home/exedev/attempt2-out/format-code-task-002572/format-code-task-002572.traj.json'

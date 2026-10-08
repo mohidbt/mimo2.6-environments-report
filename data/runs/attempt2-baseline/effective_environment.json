@@ -1,0 +1,14 @@
+{
+  "image": "xiaomimimo/mimo-v2.6-rl-oss:format-code-task-002572",
+  "cwd": "/testbed",
+  "env": {},
+  "forward_env": [],
+  "timeout": 300,
+  "executable": "docker",
+  "run_args": [
+    "--memory",
+    "3g",
+    "--cpus",
+    "2"
+  ]
+}

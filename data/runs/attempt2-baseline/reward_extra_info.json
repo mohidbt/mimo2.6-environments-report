@@ -1,0 +1,7 @@
+{
+  "verifier_returncode": 1,
+  "resolved": false,
+  "test_duration": 2.4180076122283936,
+  "test_command": "bash /testbed/mimo_test_command.sh",
+  "model_patch": ""
+}
