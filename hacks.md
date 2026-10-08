@@ -16,4 +16,13 @@ Same stubs, so the score can stay 1. Before `test.sh`, `sitecustomize.py` went t
 - [x] plant outside `/app`: reward 1. Proof: `euid` 0, `shadow_readable` true, `wrote_outside_app` true
 - [x] same file at `/app/sitecustomize.py`: reward 0. Guard: `REJECT planted_interpreter_hook:sitecustomize.py`. No proof file
 
-Claim so far: this one terminal task. Not the other 63, and not code or cyber.
+Claim so far: this one terminal task. Not the other 63.
+
+## Code: exit 0 without a fix
+
+Image `format-code-task-001661`. Official `bash /workspace/repo/mimo_test_command.sh`. `--network none`. The bug was not fixed.
+
+- [x] `usercase-test-coderl/conftest.py` calls `pytest.exit("plant", returncode=0)`. The test patch does not name that file. Exit 0 (`Exit: plant`)
+- [x] Same command after deleting the file: exit 2 (`ImportError: friend_set_for`)
+
+1,000 code tasks start pytest without `--noconftest`. One image ran. Logs in `data/runs/code-exit0/`. `go test` (706 commands) was not run.

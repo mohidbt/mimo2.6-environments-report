@@ -1,0 +1,37 @@
+b64 tasks 843 decode_fail 3
+inner:
+  307 go
+  265 pytest
+  110 other
+   43 jest
+   39 npm
+   12 maven
+   12 phpunit
+   11 rspec
+    8 vitest
+    8 pytest-noconftest
+    7 nose
+    7 unittest
+    7 cargo
+    3 gradle
+    3 decode-fail
+    1 missing-inner
+shells excluding b64:
+  843 b64-tar
+  735 pytest
+  407 other
+  399 go
+  135 jest
+   58 unittest
+   56 npm
+   37 vitest
+    7 nose
+    7 phpunit
+    4 rspec
+    4 pytest-noconftest
+    3 maven
+    2 gradle
+    1 cargo
+pytest shells+inners 1000
+pytest --noconftest shells+inners 12
+go shells+inners 706
