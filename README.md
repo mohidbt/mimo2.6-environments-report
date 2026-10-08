@@ -40,3 +40,17 @@ bash run-hacks.sh
 `run-hacks.sh` loads `data/image-55.tar` when that file exists. Otherwise it pulls `xiaomimimo/mimo-v2.6-rl-oss@sha256:eba881c4e34d3a8f9edc004f7b08f7c2589f1ca2b35146ded068f65d3ef4ca19` and tags it `general-agent-env-55`. Before the four runs it checks that `agent.py` is still `7f6b5bdd60bd5af10522a0419843c4393e407208a98c29985b0ebf99d779b0b1`.
 
 `probes/stubs/` is the stub run. `probes/sitecustomize.py` is the plant. `probes/inside.sh` is what the container runs.
+
+## Next
+
+The same two questions, on the other families that use a program as the grader. One image per shared grader. Per-task runs wait until that grader is checked.
+
+| Family | Tasks | What is shared | Where it stands |
+| --- | --- | --- | --- |
+| Code | 2,698 | One reward function. It resets only paths the test patch names, then runs that task's test command | System `sitecustomize.py` ran as root inside the official pytest command on `format-code-task-001661`. Pytest exited 2. Reward stayed 0 |
+| Cyber | 1,000 | Reward reads `/root/last_result.json`. It does not call the agent's `submit.sh` | On `arvo-v1-35858`, only root could create that file. `agent` and `verify` could not |
+| Rubric | 925 | One image. The verifier is `python3 /work/run_verify.py` on a sidecar | A plant in the shared workspace did not run. A system plant ran only in the same container |
+| Webdev | 2,093 | One image. Eval screenshots the page with Playwright | Page JS ran in Chromium as root. No vision score |
+| Music | 1,000 | No task image in the dataset | Not started |
+
+Logs are in `data/runs/p0/`. Those runs are not the terminal result above.
