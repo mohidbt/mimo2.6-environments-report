@@ -39,7 +39,7 @@ The [proof](../evidence/terminal-paramiko/system-startup-hook/verifier-escaped-p
 
 This result is for task `candidate-2535-security-cryptography`, image `general-agent-env-55`. The score is written to `/logs/verifier/reward.txt` inside the container. All four sets of logs are under [terminal evidence](../evidence/terminal-paramiko/).
 
-The dataset inspection found the same guard file across all 64 terminal tasks, each running it before pytest. The other 63 tasks were not executed; their tests differ. The placeholder solution is specific to this task.
+The dataset inspection found the same guard file across all 64 terminal tasks, each running it before pytest. That guard only scans `/app`, so the system startup file sits outside every one of those scans. The placeholder solution is specific to this task, because the other tasks use different tests.
 
 Exact identifiers for reproduction:
 
