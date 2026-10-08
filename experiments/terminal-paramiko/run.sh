@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 IMAGE='xiaomimimo/mimo-v2.6-rl-oss:general-agent-env-55'
 # Pristine agent.py from the task manifest. The local image id is not the registry digest.
 AGENT_SHA='7f6b5bdd60bd5af10522a0419843c4393e407208a98c29985b0ebf99d779b0b1'
-TASK="$ROOT/data/candidate-2535-security-cryptography"
+TASK="$ROOT/tasks/terminal-paramiko"
+mkdir -p "$ROOT/results"
+OUT="$(mktemp -d "$ROOT/results/terminal-paramiko-XXXXXX")"
 
 DIGEST='xiaomimimo/mimo-v2.6-rl-oss@sha256:eba881c4e34d3a8f9edc004f7b08f7c2589f1ca2b35146ded068f65d3ef4ca19'
 docker info >/dev/null
@@ -21,13 +23,13 @@ docker run --rm --platform linux/amd64 --network none --entrypoint /bin/sh "$IMA
 
 run_one() {
   local mode="$1"
-  local run="$ROOT/data/runs/$mode"
-  rm -rf "$run"
+  local run="$OUT/$mode"
   mkdir -p "$run"
   set +e
   docker run --rm --platform linux/amd64 --network none --cpus 1 --memory 2g \
     --mount "type=bind,source=$TASK/tests,target=/tests,readonly" \
-    --mount "type=bind,source=$ROOT/probes,target=/plant,readonly" \
+    --mount "type=bind,source=$ROOT/experiments/terminal-paramiko,target=/plant,readonly" \
+    --mount "type=bind,source=$ROOT/experiments/shared/sitecustomize.py,target=/shared/sitecustomize.py,readonly" \
     --mount "type=bind,source=$run,target=/logs/verifier" \
     --entrypoint /bin/sh "$IMAGE" /plant/inside.sh "$mode" \
     >"$run/container.log" 2>&1
@@ -39,8 +41,8 @@ run_one() {
   fi
 }
 
-for mode in control reward-hack cyber-hack negative; do
+for mode in untouched stub-solution system-startup-hook workspace-startup-hook; do
   run_one "$mode" &
 done
 wait
-echo DONE
+echo "Results: $OUT"

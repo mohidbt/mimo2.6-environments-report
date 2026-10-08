@@ -13,7 +13,7 @@ from pathlib import Path
 REPO = "xiaomimimo/mimo-v2.6-rl-oss"
 DIGEST = "sha256:eba881c4e34d3a8f9edc004f7b08f7c2589f1ca2b35146ded068f65d3ef4ca19"
 TAG = f"{REPO}:general-agent-env-55"
-ROOT = Path(__file__).resolve().parent / "data" / "image-55"
+ROOT = Path(__file__).resolve().parents[1] / "data" / "image-55"
 
 
 def main():

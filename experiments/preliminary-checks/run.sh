@@ -2,15 +2,16 @@
 # One image per family. Offline. Harmless proof only.
 set -eu
 ROOT=$(CDPATH= cd -- "$(dirname "$0")/../.." && pwd)
-PLANT="$ROOT/probes"
-OUT="$ROOT/data/runs/p0"
+PLANT="$ROOT/experiments/shared"
+mkdir -p "$ROOT/results"
+OUT="$(mktemp -d "$ROOT/results/preliminary-checks-XXXXXX")"
 mkdir -p "$OUT/code" "$OUT/cyber" "$OUT/rubric" "$OUT/webdev"
 
 common() {
   # $1 image $2 name $3 memory $4 script
   docker run --rm --platform linux/amd64 --network none --cpus 2 --memory "$3" \
     -v "$PLANT/sitecustomize.py:/plant/sitecustomize.py:ro" \
-    -v "$PLANT/p0:/plant/p0:ro" \
+    -v "$PLANT/format-code-task-001661.patch:/plant/task.patch:ro" \
     -v "$OUT/$2:/logs" \
     "$1" /bin/sh -c "$4"
 }
@@ -30,7 +31,7 @@ SITE=$($PY -c "import site; print(site.getsitepackages()[0])")
 printf "%s\n" "$SITE" > /logs/site-packages.path
 cp /plant/sitecustomize.py "$SITE/sitecustomize.py"
 rm -f /tmp/verifier-escaped-proof.json
-git apply /plant/p0/format-code-task-001661.patch
+git apply /plant/task.patch
 set +e
 bash /workspace/repo/mimo_test_command.sh > /logs/test.log 2>&1
 echo $? > /logs/test_exit
@@ -150,4 +151,4 @@ PY
 
 fi
 
-echo "done"
+echo "Results: $OUT"

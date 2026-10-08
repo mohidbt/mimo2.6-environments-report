@@ -1,12 +1,12 @@
 #!/bin/sh
-# go test witness. Extra *_test.go, not named by the patch, calls os.Exit(0).
+# Untested proposal: an extra Go test file calls os.Exit(0). No saved result.
 set -eu
 ROOT=$(CDPATH= cd -- "$(dirname "$0")/../.." && pwd)
-OUT="$ROOT/data/runs/code-exit0-go"
-mkdir -p "$OUT"
+mkdir -p "$ROOT/results"
+OUT="$(mktemp -d "$ROOT/results/untested-go-bypass-XXXXXX")"
 docker run --rm --platform linux/amd64 --network none --cpus 2 --memory 4g \
-  -v "$ROOT/probes/code-exit0/format-code-task-001090.patch:/plant/patch:ro" \
-  -v "$ROOT/probes/code-exit0/zz_plant_test.go:/plant/zz_plant_test.go:ro" \
+  -v "$ROOT/experiments/untested-go-bypass/format-code-task-001090.patch:/plant/patch:ro" \
+  -v "$ROOT/experiments/untested-go-bypass/zz_plant_test.go:/plant/zz_plant_test.go:ro" \
   -v "$OUT:/logs" \
   xiaomimimo/mimo-v2.6-rl-oss:format-code-task-001090 \
   /bin/sh -c '
@@ -29,3 +29,5 @@ bash /testbed/mimo_test_command.sh > /logs/negative.log 2>&1
 echo $? > /logs/negative_exit
 set -e
 '
+
+echo "Results: $OUT"

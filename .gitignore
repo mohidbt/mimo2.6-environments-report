@@ -1,7 +1,7 @@
 plans/
 shareout/
 
-# Local research notes and checkouts. Not needed to rerun the one task.
+# Local research notes and upstream checkouts.
 findings.json
 upstream/
 vendor/
@@ -12,3 +12,6 @@ data/general/
 data/.cache/
 data/image-55/
 data/image-55.tar
+
+# New local runs. Published evidence is kept separately in evidence/.
+results/

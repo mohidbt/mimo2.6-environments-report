@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["huggingface-hub", "pyarrow"]
 # ///
-"""Run with: uv run fetch-task.py. Fetch only one task using image 55."""
+"""Run with: uv run scripts/fetch-terminal-task.py. Fetch only one task using image 55."""
 import base64
 import json
 from pathlib import Path, PurePosixPath
@@ -14,7 +14,7 @@ REPO = "XiaomiMiMo/MiMo-V2.6-RL-oss"
 REVISION = "f819cd2"
 IMAGE_TAG = "general-agent-env-55"
 IMAGE = "xiaomimimo/mimo-v2.6-rl-oss@sha256:eba881c4e34d3a8f9edc004f7b08f7c2589f1ca2b35146ded068f65d3ef4ca19"
-ROOT = Path(__file__).resolve().parent / "data"
+ROOT = Path(__file__).resolve().parents[1] / "data"
 
 
 def unpack(row):
@@ -43,7 +43,7 @@ def main():
         raise SystemExit(f"No task names {IMAGE_TAG}. Dataset images: {images}")
     instance = matches[0]
     if instance.get("dataset_type") == "terminal_bench":
-        task_dir = ROOT / instance["instance_id"]
+        task_dir = ROOT.parent / "tasks" / "terminal-paramiko"
         task_dir.mkdir(parents=True, exist_ok=True)
         files = json.loads(instance["tests_files"])
         for name, encoded in files.items():

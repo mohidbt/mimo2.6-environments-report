@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-bash "$ROOT/smoke-image.sh"
-TASK="$ROOT/data/candidate-2535-security-cryptography"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+bash "$ROOT/scripts/check-terminal-image.sh"
+TASK="$ROOT/tasks/terminal-paramiko"
 test -f "$TASK/tests/test.sh"
-RUN_DIR="$(mktemp -d "$ROOT/data/baseline-XXXXXX")"
+mkdir -p "$ROOT/results"
+RUN_DIR="$(mktemp -d "$ROOT/results/terminal-baseline-XXXXXX")"
 set +e
 docker run --rm --platform linux/amd64 --network none --cpus 1 --memory 2g \
   --mount "type=bind,source=$TASK/tests,target=/tests,readonly" \

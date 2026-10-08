@@ -2,7 +2,7 @@
 set -euo pipefail
 
 IMAGE='xiaomimimo/mimo-v2.6-rl-oss@sha256:eba881c4e34d3a8f9edc004f7b08f7c2589f1ca2b35146ded068f65d3ef4ca19'
-ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 docker info >/dev/null
 if [ -f "$ROOT/data/image-55.tar" ]; then
   docker load -i "$ROOT/data/image-55.tar"
