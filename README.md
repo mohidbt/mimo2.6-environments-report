@@ -51,7 +51,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | [Website](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
 | [Music](docs/other-environments.md) | tbd | tbd | tbd | tbd | tbd | tbd |
 
-### Basis for wider reach
+### Impact
 
 | Criterion and mechanism | Scope supported by inspection | Still needed to prove success across that scope |
 | --- | --- | --- |
