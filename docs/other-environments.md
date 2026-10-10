@@ -12,8 +12,7 @@ The example brief, source `gK-0768`, asks for E major, 129 BPM, 4/4, about 56 ba
 
 | Submission | Reward |
 | --- | ---: |
-| C major, 4/4, 132 BPM, 6 voices | 0.827 |
-| That same piece, with this brief's constraints passed into the scorer | 0.827 |
+| C major, 4/4, 132 BPM, 6 voices, 40 bars, with this brief's constraints passed into the scorer | 0.827 |
 | That same piece, with contradictory constraints passed in | 0.827 |
 | B-flat, 6/8, 200 BPM, 4 voices, 16 bars | 0.698 |
 | Four notes whose headers name E, 4/4, 129 BPM, and 3 voices | 0.399 |

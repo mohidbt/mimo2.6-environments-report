@@ -59,7 +59,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. | Agent success on other tasks under each information condition. The 1,000-command count does not establish this. |
 | 1a, terminal: placeholder repair | Task-specific test patterns and file hashes. | None for a wider repair: the tests and file hashes are per task. |
 | 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. |
-| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`. The function reads the submitted ABC. A C-major piece at 132 BPM with 6 voices scored 0.827 on a brief for E major, 129 BPM, 3 voices, and about 56 bars. Passing the real constraints into the function left the score at 0.827. A 6/8 piece in B-flat at 200 BPM scored 0.698. | None for this score. Agent runs were not done. |
+| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`, which ignores the brief. [Submissions and scores](docs/other-environments.md#music). | None for this score. Agent runs were not done. |
 
 ## Files and reproduction
 

@@ -15,6 +15,13 @@
   },
   "rows_sharing_this_scorer": 1000,
   "distinct_bpm_meter_voice_combinations": 509,
+  "piece": {
+    "key": "C",
+    "meter": "4/4",
+    "tempo_quarter": 132,
+    "voices": 6,
+    "bars": 40
+  },
   "rewards": {
     "piece_C_4_4_132bpm_6voices": 0.827,
     "same_piece_with_contradictory_constraints": 0.827,

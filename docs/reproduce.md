@@ -83,7 +83,7 @@ Requires `abc2midi` on `PATH`. No image and no model.
 bash experiments/music-prompt-ignored/run.sh
 ```
 
-The script scores the three saved pieces, including one with a shell-style comment, and exits nonzero if a reward differs from the [saved result](../evidence/music-prompt-ignored/result.json). Expected rewards: the C-major piece 0.827 with either constraint object, the 6/8 piece 0.698, the four-note header claim 0.399, and text with no ABC 0. The comment must not create `/tmp/music-marker`.
+The script scores the three saved pieces, including one with a shell-style comment, and loads its expected rewards from the [saved result](../evidence/music-prompt-ignored/result.json). It exits nonzero if any reward differs or the comment creates `/tmp/music-marker`.
 
 ## Preliminary and untested checks
 

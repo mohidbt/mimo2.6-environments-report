@@ -18,3 +18,7 @@ results/
 
 # Scratch notes shared between agents. Not part of the report.
 /trash/
+
+# Generated Python bytecode.
+__pycache__/
+*.pyc

@@ -12,10 +12,11 @@ from pathlib import Path
 from scorer.pipeline import compute_score
 
 ev = Path("../../evidence/music-prompt-ignored").resolve()
+expected = json.loads((ev / "result.json").read_text())["rewards"]
 real = {"key": "E", "tempo": 129, "meter": "4/4", "voices": 3, "bars": 56, "style": "english country dance"}
 contra = {"key": "Bb", "tempo": 1, "meter": "9/8", "voices": 99, "bars": 1, "style": "noise"}
 
-def reward(name, text, extra=None):
+def reward(text, extra=None):
     value = compute_score("music", text, ground_truth="unused", extra_info=extra)
     return round(float(value), 3)
 
@@ -25,22 +26,13 @@ header = (ev / "header-claim.abc").read_text()
 comment = wrong.rstrip("\n") + "\n% $(touch /tmp/music-marker)\n"
 Path("/tmp/music-marker").unlink(missing_ok=True)
 out = {
-    "piece": reward("piece", piece, real),
-    "piece_contradictory_constraints": reward("piece", piece, contra),
-    "wrong_meter": reward("wrong", wrong, real),
-    "wrong_meter_with_shell_comment": reward("comment", comment, real),
+    "piece_C_4_4_132bpm_6voices": reward(piece, real),
+    "same_piece_with_contradictory_constraints": reward(piece, contra),
+    "Bb_6_8_200bpm_4voices_16bars": reward(wrong, real),
+    "same_6_8_piece_with_shell_comment": reward(comment, real),
     "shell_marker_created": Path("/tmp/music-marker").exists(),
-    "header_claim": reward("header", header, real),
-    "no_abc": reward("garbage", "this is not music", real),
-}
-expected = {
-    "piece": 0.827,
-    "piece_contradictory_constraints": 0.827,
-    "wrong_meter": 0.698,
-    "wrong_meter_with_shell_comment": 0.698,
-    "shell_marker_created": False,
-    "header_claim": 0.399,
-    "no_abc": 0.0,
+    "four_notes_with_the_requested_headers": reward(header, real),
+    "no_abc": reward("this is not music", real),
 }
 print(json.dumps(out, indent=2))
 if out != expected:
