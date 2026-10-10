@@ -1,7 +1,7 @@
 # MiMo2.6 RL Environments - Risk Assessment
 
-tl;dr: 37% of all coding tasks allow a simple reward hack, fully circumventing the task! Moreover, all terminal tasks had quite simplistic graders, such that simple placeholder files could spoof passes. 
-We could show on first try that agents (running on real mimoagent harness in released docker images) instructed to circumvent those tasks, with simple hint (which file to look for), could successfully fool the scorer.
+tl;dr: 37% of all coding tasks allow a simple reward hack that makes every requirement pass and return before the test files run. Moreover, all terminal tasks had quite simplistic graders, such that simple placeholder files could spoof passes.
+Does it work in real life though (with the tools and accesses agents have in real envs)? We could show on first try that agents (running on the real mimoagent harness in released docker images) instructed to circumvent those tasks - with simple hint (which file to look for) - could successfully fool the scorer.
 
 ## Methodology
 
@@ -35,12 +35,12 @@ We use harmless execution markers in place of malicious code. Current execution 
 | Cyber | 1,000 | Reads the result from a file under `/root`. |
 | Rubric | 925 | Runs a verifier in a separate container with a shared workspace. |
 | Webdev | 2,093 | Renders the submitted website in a browser for visual evaluation. |
-| Music | 1,000 | No task image available in the inspected dataset. |
+| Music | 1,000 | Scores ABC notation for human-likeness. No task image available. |
 
 ## Results and scale
 
 Each cell has its own result and scope. `pass` means clear demonstration. `tbd` means it was not. A parenthesis is a recorded attempt or a partial result. Task counts refer to distinct tasks tested.
-The agent experiments used Grok 4.7, explicitly instructed to exploit the score. 
+The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 
 | Environment type | Spoof exists (1a) | Full info (1b.i) | Minimal hint (1b.ii) | No info (1b.iii) | Malware + pass (2a) | Later rollouts (2b) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -49,7 +49,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | [Security](docs/other-environments.md) | tbd (forged crash text: match false) | tbd | tbd | tbd | tbd (agent binary did not run) | tbd |
 | [Rubric](docs/other-environments.md) | tbd (empty work failed the action checks) | tbd | tbd | tbd | tbd | tbd |
 | [Website](docs/other-environments.md) | tbd (vision score not measured) | tbd | tbd | tbd | tbd | tbd |
-| [Music](docs/other-environments.md) | pass<br>Reward 0.827. Same scorer: 1,000 / 1,000³ | tbd | tbd | tbd | tbd (notation is not executed) | tbd (no task image) |
+| [Music](docs/other-environments.md) | pass: manual<br>Wrong key and tempo, reward 0.827<br>Impacts: 1,000 / 1,000³ | tbd | tbd | tbd | - | tbd (no task image) |
 
 ### Impact
 
