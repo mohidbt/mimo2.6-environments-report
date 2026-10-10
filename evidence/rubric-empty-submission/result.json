@@ -1,0 +1,21 @@
+{
+  "census": {
+    "tasks": 925,
+    "tasks_with_an_llm_item": 925,
+    "tasks_with_only_rule_items": 0,
+    "tasks_with_some_rule_points": 230
+  },
+  "task": "s3k_1383_healthcare_ops_en_t3_rl_003",
+  "why_this_task": "Largest rule-weight share: 2.8 of 3.0 on rule items, 0.2 on one text-judge item.",
+  "empty_submission_rule_scores": {
+    "check_planner_card_corrected": 0.0,
+    "check_single_reconciliation_audit_added": 0.0,
+    "check_operation_summary": 0.0,
+    "check_existing_database_records_preserved": 0.0,
+    "check_workspace_files_untouched": 1.0
+  },
+  "llm_item": "not called",
+  "seed_update_rows": 275,
+  "preservation_check_expects_update_rows": 276,
+  "note": "Item scores are the task's own rule functions on the original workspace and seed databases. The published verifier masks the reward when the judge is missing or fails, so these item scores were not returned as a reward."
+}

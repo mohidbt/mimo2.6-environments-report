@@ -1,0 +1,18 @@
+{
+  "reward_function": "group_pick.reward_one",
+  "cases": {
+    "pick 1, query 1, runtime 1": 1.0,
+    "pick 1, query 0.19, runtime 1": 0.0,
+    "pick 1, query 0, runtime 1": 0.0,
+    "pick 1, query 1, runtime 0": 0.0,
+    "missing pick": null,
+    "missing query": null
+  },
+  "runtime_gate": {
+    "unrelated_static_html": {"factor": 1.0, "why": "clean"},
+    "broken_inline_script": {"factor": 0.0, "why": "SyntaxError: Unexpected token '{'"},
+    "recorded_pageerror": {"factor": 0.0, "why": "uncaught: boom"}
+  },
+  "vision_called": false,
+  "rows": 2093
+}

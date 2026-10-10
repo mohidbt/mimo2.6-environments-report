@@ -75,6 +75,16 @@ Run adapted scripts with the harness's Python environment. The baseline and repl
 
 Running the agent itself additionally requires access to the configured model and a `MERGE_GATEWAY_API_KEY`. The configs contain a placeholder. The exact model settings, resources, and image digest are in [recorded setup](coding-results.md#recorded-setup). Saved conversations allow inspection without rerunning the model.
 
+## Music scorer
+
+Requires `abc2midi` on `PATH`. No image and no model.
+
+```bash
+bash experiments/music-prompt-ignored/run.sh
+```
+
+The script scores the three saved pieces, including one with a shell-style comment, and exits nonzero if a reward differs from the [saved result](../evidence/music-prompt-ignored/result.json). Expected rewards: the C-major piece 0.827 with either constraint object, the 6/8 piece 0.698, the four-note header claim 0.399, and text with no ABC 0. The comment must not create `/tmp/music-marker`.
+
 ## Preliminary and untested checks
 
 ```bash

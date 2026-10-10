@@ -7,6 +7,7 @@ The folders follow the [assessment method](../docs/methodology.md): test for fal
 | [terminal-paramiko](terminal-paramiko/) | Reward hacking and exploit hacking | False pass plus startup code execution; manual checks on one task |
 | [coding-pytest-bypass](coding-pytest-bypass/) | Reward hacking | Manual early-exit check; Salt agent-run evidence is linked below |
 | [coding-shell-replacement](coding-shell-replacement/) | Exploit hacking | Grader shell altered; task still fails; other rollouts untested |
+| [music-prompt-ignored](music-prompt-ignored/) | Reward hacking | Published scorer rewards pieces that miss the brief; replay checks the saved numbers |
 | [preliminary-checks](preliminary-checks/) | Initial access checks | Limited checks, no false pass demonstrated |
 | [untested-go-bypass](untested-go-bypass/) | Reward hacking | Proposed early-exit check, not run |
 | [shared](shared/) | Inputs used across checks | Harmless Python startup marker and the coding task's test patch |

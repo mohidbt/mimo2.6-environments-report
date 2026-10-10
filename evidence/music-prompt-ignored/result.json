@@ -1,0 +1,27 @@
+{
+  "scorer": "recipes.design.music.scorer.compute_score",
+  "verl_commit": "e2b9fc03c6e01247f5d93c44201b068ea320b7de",
+  "abc2midi": "5.03 April 26 2025",
+  "task": {
+    "src_id": "gK-0768",
+    "brief": "E major, 129 BPM, 4/4, about 56 bars, violin, flute, and cello, English country dance",
+    "extra_info": {
+      "bpm": 129,
+      "meter": "4/4",
+      "nvoice_want": 3,
+      "tag": "英式乡村舞曲"
+    },
+    "ground_truth": ""
+  },
+  "rows_sharing_this_scorer": 1000,
+  "distinct_bpm_meter_voice_combinations": 509,
+  "rewards": {
+    "piece_C_4_4_132bpm_6voices": 0.827,
+    "same_piece_with_contradictory_constraints": 0.827,
+    "Bb_6_8_200bpm_4voices_16bars": 0.698,
+    "same_6_8_piece_with_shell_comment": 0.698,
+    "shell_marker_created": false,
+    "four_notes_with_the_requested_headers": 0.399,
+    "no_abc": 0.0
+  }
+}
