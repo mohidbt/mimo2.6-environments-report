@@ -1,0 +1,35 @@
+{
+  "question": "Is there a 1a spoof on Security, Rubric, or Website that the shared grader would accept on many tasks of that type?",
+  "counted_pass": false,
+  "security": {
+    "rows": 1000,
+    "reward_style_rule": 1000,
+    "prompts_parsed": 1000,
+    "distinct_functions": 661,
+    "distinct_images": 1000,
+    "image_name": "arvo-rl",
+    "live_grade_this_session": false,
+    "why_not_a_pass": "Reward is 1 only when the root-owned binary's stderr has a crash in the named function and sanitizer error. The upload is stored as /home/verify/run/poc and is not placed in the shell command. The agent cannot write /root/last_result.json. A crash in the named function is the task. The earlier live submit of a forged trace on arvo-v1-35858 stayed crash false and match false.",
+    "counted": "not_computable_this_session"
+  },
+  "rubric": {
+    "rows": 925,
+    "image": "general-agent-env-0:oss",
+    "reward_style_rule": 925,
+    "saved_census_tasks_with_an_llm_item": 925,
+    "saved_census_rechecked_from_rubric_files": false,
+    "live_grade_this_session": false,
+    "why_not_a_pass": "The training harness returns 0 with judge_key_missing before verify.py when GA_JUDGE_KEY is unset. A judge failure masks the reward instead of keeping the rule score. No judge key is configured, so a spoof cannot pass or fail.",
+    "counted": "not_computable"
+  },
+  "website": {
+    "rows": 2093,
+    "image": "webdev-rl-opensource:v2",
+    "category": "website",
+    "cwd": "/workspace",
+    "empty_prompts": 0,
+    "live_grade_this_session": false,
+    "why_not_a_pass": "Training reward is a group pick plus a vision query score. reward_one returns no reward when the query score is missing. An unrelated clean page can get runtime factor 1, and that factor does not supply the vision score. No vision service was called.",
+    "counted": "not_computable"
+  }
+}

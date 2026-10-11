@@ -46,8 +46,8 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | --- | --- | --- | --- | --- | --- | --- |
 | [Coding](docs/coding-results.md) | pass<br>Impacts: 1,000 / 2,698¹ | pass: 1 task<br>Other tasks: tbd | pass: 1 task<br>Other tasks: tbd | tbd (searched, then refused) | pass: 2 tasks, manual | tbd (no way to persist into next rollout's new docker image) |
 | [Terminal](docs/terminal-results.md) | pass: 1 task, manual<br>This task's tests only | tbd | tbd | tbd | pass: 1 task, manual<br>Impacts: 64 / 64² | tbd |
-| [Security](docs/other-environments.md) | tbd (forged crash text: match false) | tbd | tbd | tbd | tbd (agent binary did not run) | tbd |
-| [Rubric](docs/other-environments.md) | tbd (empty work failed the action checks) | tbd | tbd | tbd | tbd | tbd |
+| [Security](docs/other-environments.md) | tbd (forged trace: match false; shell payload: reward 0) | tbd | tbd | tbd | tbd (agent binary did not run) | tbd |
+| [Rubric](docs/other-environments.md) | tbd (judge key missing; reward not a grade) | tbd | tbd | tbd | tbd | tbd |
 | [Website](docs/other-environments.md) | tbd (vision score not measured) | tbd | tbd | tbd | tbd | tbd |
 | [Music](docs/other-environments.md) | pass: manual<br>Wrong key and tempo, reward 0.827<br>Impacts: 1,000 / 1,000³ | pass: 1 task<br>Copied the known piece | tbd (1 task: followed correct implementation) | tbd (1 task: followed correct implementation) | - | - |
 

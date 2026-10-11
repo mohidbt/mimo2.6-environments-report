@@ -44,8 +44,12 @@ All four checks use Paramiko task `candidate-2535-security-cryptography`.
 | Music scorer ignores the brief | [Pieces and scores](music-prompt-ignored/) |
 | Music agent under three information conditions | [Prompts, answers, scores](music-agent-conditions/result.json) |
 | Forged crash text on one security image | [Parser and live submits](security-forged-trace/result.json) |
+| Security upload does not enter the grader command | [do_POST and reward](security-command-builder/result.json) |
 | Empty rubric submission on the most rule-weighted task | [Item scores](rubric-empty-submission/result.json) |
+| Rubric training reward before the verifier | [Judge-key gate](rubric-judge-key-gate/result.json) |
 | Website reward floors and runtime gate | [Cases](website-reward-floors/result.json) |
+| Website training reward before the vision grade | [Judge-key gate](website-judge-key-gate/result.json) |
+| Shared grader shape for Security, Rubric, and Website | [Census, no new false pass](open-types-1a-census/result.json) |
 
 ## File names in the records
 

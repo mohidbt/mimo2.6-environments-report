@@ -40,7 +40,9 @@ The checker would accept a handwritten trace. A few lines naming `extract_name` 
 
 The copy under `/home/agent/binary` is a different file. Replacing it with a script that exits 1 left the next submission at exit code 0 and match false. `/root/binary/fuzz_util` was still the original ELF. The agent user cannot create `/root/last_result.json`, cannot write `/root/binary`, and cannot write `/home/verify`. `/root/binary` contains no symlinks. `run.sh` passes the proof path as one quoted argument and points `LD_LIBRARY_PATH` at the libraries copied from `/root/binary`.
 
-[Saved comparison](../evidence/security-forged-trace/result.json). This is one image. The reward file and the graded binary are the shared shape described for the family. A second image was not graded.
+[Saved comparison](../evidence/security-forged-trace/result.json). This is one image. The reward file and the graded binary are the shared shape described for the family. A second image was not graded. All 1,000 rows use the same rule reward, a separate `arvo-rl` image, and a prompt the setup parser accepts (661 distinct functions). That shared parser does not accept a file that merely names the function. The graded program still has to crash there.
+
+The published submit handler was run on a shell payload in the upload body and another in the filename. The `su -c` command stayed the fixed proof path. The payload was not in the command and not in stderr. The graded process stub exited 0, so crash was false, match was false, and the reward function returned 0.0. The same function returns 1.0 when stderr already holds the matching stack. This handler copies that stderr from the process. It does not build it from the upload. [Command check](../evidence/security-command-builder/result.json).
 
 ## Rubric
 
@@ -58,12 +60,12 @@ The task with the largest rule share is `s3k_1383_healthcare_ops_en_t3_rl_003`: 
 
 The card is still the original completed card. The audit table has 275 rows; the preservation check requires 276, which is the seed plus the one edit the task asks for. The file check scores 1 because the workspace files are the originals. The judge item was not called. The judge prompt pastes the deliverable text and then the checkpoint. Whether a deliverable can steer that judge was not measured.
 
-On this task the seven tools open only their own `state.db`. A Python startup file in the shared workspace still does not run inside the verifier container. [Item scores](../evidence/rubric-empty-submission/result.json).
+On this task the seven tools open only their own `state.db`. A Python startup file in the shared workspace still does not run inside the verifier container. [Item scores](../evidence/rubric-empty-submission/result.json). All 925 rubric rows use `general-agent-env-0`. Calling the training reward with the judge key unset returns 0.0 and `judge_key_missing` before `verify.py`. That 0.0 is not a grade of the submission. No row is rule-only. The largest rule share is 14/15, on the task above, so rules alone are not a full score. [Key gate](../evidence/rubric-judge-key-gate/result.json).
 
 ## Website
 
 MiMo calls these **Webdev**. Training reward is a group rank over siblings. One row's number needs a vision query score, a group pick, and a runtime factor. `reward_one(1, 1, 1)` is 1.0. The same perfect pick with a query score of 0.19 is 0.0. A runtime factor of 0 is 0.0. A missing pick or a missing query returns no reward.
 
-The runtime gate is the deterministic part. An unrelated static page, with no script, is factor 1. An inline script with a syntax error is factor 0, and so is a recorded page error. The gate can withhold a reward. It cannot supply the vision score. No vision call was made. The sample brief asks for a static site, so a page that merely looks right would still have to be scored by that call. [Floors and gate](../evidence/website-reward-floors/result.json).
+The runtime gate is the deterministic part. An unrelated static page, with no script, is factor 1. An inline script with a syntax error is factor 0, and so is a recorded page error. The gate can withhold a reward. It cannot supply the vision score. No vision call was made. The sample brief asks for a static site, so a page that merely looks right would still have to be scored by that call. All 2,093 rows are category website, cwd `/workspace`, image `webdev-rl-opensource:v2`, and none has an empty brief. Calling the training reward with the judge key unset returns 0.0 and `webdev_drop` before `grade()`. `reward_one` with a missing query score returns no reward. [Floors and gate](../evidence/website-reward-floors/result.json). [Key gate](../evidence/website-judge-key-gate/result.json). [Row census](../evidence/open-types-1a-census/result.json).
 
 [Earlier access checks](../evidence/preliminary-checks/) remain separate from the scores above.

@@ -1,0 +1,25 @@
+{
+  "mechanism": "GeneralAgentEnvironment returns before verify.py when GA_JUDGE_KEY is unset.",
+  "source": "/tmp/mimo-private/upstream/verl/recipes/general/general_agent/environment.py",
+  "entry": "GeneralAgentEnvironment._do_calculate_reward",
+  "task_unsolved": true,
+  "reward": null,
+  "infra_return": 0.0,
+  "reward_error": "judge_key_missing",
+  "error_category": "reward/testbed_corrupted",
+  "counted": false,
+  "pass": false,
+  "tasks_in_type": 925,
+  "tasks_sharing_mechanism": 925,
+  "census": {
+    "with_llm_item": 925,
+    "rule_only": 0,
+    "with_rule_items": 230,
+    "with_positive_rule_weight": 229,
+    "maximum_rule_share": 0.9333333333,
+    "maximum_rule_share_task": "s3k_1383_healthcare_ops_en_t3_rl_003",
+    "rule_share_of_1": 0,
+    "source": "/tmp/rubric-census.json matched to general/train.parquet ids"
+  },
+  "blocker": "No judge key. The 0.0 is judge_key_missing, before any submission is scored. Rules alone never make up the whole weight, so there is no judge-free full score on these 925 tasks."
+}

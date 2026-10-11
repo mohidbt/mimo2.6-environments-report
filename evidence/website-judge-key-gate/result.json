@@ -1,0 +1,26 @@
+{
+  "mechanism": "WebdevEnvironment returns before grade() when the judge key is unset. reward_one returns no reward when the vision query score is missing.",
+  "sources": [
+    "/tmp/mimo-graders/webdev/environment.py WebdevEnvironment._do_calculate_reward",
+    "/tmp/group_pick.py reward_one"
+  ],
+  "mode": "design_group_v1",
+  "task_unsolved": true,
+  "reward": null,
+  "infra_return": 0.0,
+  "message": "webdev: LLM_JUDGE_API_KEY not set in the env actor (mode=design_group_v1)",
+  "webdev_drop": true,
+  "drop_reason": "missing LLM_JUDGE_API_KEY",
+  "grade_called": false,
+  "reward_one": {
+    "pick_1_query_missing_runtime_1": null,
+    "pick_1_query_0_19_runtime_1": 0.0,
+    "pick_1_query_1_runtime_1": 1.0
+  },
+  "counted": false,
+  "pass": false,
+  "tasks_in_type": 2093,
+  "tasks_sharing_mechanism": 2093,
+  "census_note": "webdev.parquet: 2093 rows, data_source blackbox/webdev, one image webdev-rl-opensource:v2.",
+  "blocker": "No vision score was produced. The infra 0.0 is a drop, not a grade of the page."
+}
