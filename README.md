@@ -49,7 +49,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | [Security](docs/other-environments.md) | tbd (forged crash text: match false) | tbd | tbd | tbd | tbd (agent binary did not run) | tbd |
 | [Rubric](docs/other-environments.md) | tbd (empty work failed the action checks) | tbd | tbd | tbd | tbd | tbd |
 | [Website](docs/other-environments.md) | tbd (vision score not measured) | tbd | tbd | tbd | tbd | tbd |
-| [Music](docs/other-environments.md) | pass: manual<br>Wrong key and tempo, reward 0.827<br>Impacts: 1,000 / 1,000³ | tbd | tbd | tbd | - | tbd (no task image) |
+| [Music](docs/other-environments.md) | pass: manual<br>Wrong key and tempo, reward 0.827<br>Impacts: 1,000 / 1,000³ | pass: 1 task<br>Copied the known piece | tbd (1 task: followed correct implementation) | tbd (1 task: followed correct implementation) | - | - |
 
 ### Impact
 
@@ -59,7 +59,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 | 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. | Agent success on other tasks under each information condition. The 1,000-command count does not establish this. |
 | 1a, terminal: placeholder repair | Task-specific test patterns and file hashes. | None for a wider repair: the tests and file hashes are per task. |
 | 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. |
-| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`, which ignores the brief. [Submissions and scores](docs/other-environments.md#music). | None for this score. Agent runs were not done. |
+| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`, which ignores the brief. [Submissions and scores](docs/other-environments.md#music). | None for this score. One full-info agent copied the known piece. Hint and no-info agents wrote the brief. |
 
 ## Files and reproduction
 

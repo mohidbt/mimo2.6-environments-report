@@ -1,0 +1,56 @@
+X:1
+T:The Neon Rooftop
+T:天台霓虹
+M:4/4
+L:1/8
+Q:1/4=129
+K:E
+%%score {1 | 2 | 3}
+%%MIDI program 1 40
+%%MIDI program 2 73
+%%MIDI program 3 42
+V:1 name="Violin" sname="Vln." clef=treble
+V:2 name="Flute" sname="Fl." clef=treble
+V:3 name="Cello" sname="Vc." clef=bass
+[V:1] !p! E G B G E G B G | G B G E G B G2 | A c e c A c e c | c e g e c e g2 |
+[V:2] !p! g b d' b g b d' b | b d' b g b d' b2 | c' e' g' e' c' e' g' e' | e' g' e' c' e' g' e'2 |
+[V:3] !p! E,,4 B,,4 | E,,4 E,4 | A,,4 E,4 | A,,4 A,,4 |
+[V:1] B d f d B d f d | d f d B d f B2 | d f a f d f d2 | B G E G E4 |
+[V:2] d' f' a' f' d' f' d'2 | b d' f' d' b d' b2 | d' f' a' f' d' f' d'2 | g'4 e'4 |
+[V:3] B,,4 F,,4 | B,,4 D,4 | B,,4 F,,4 | E,,8 |
+[V:1] !mp! G B d B G B d B | A c e c A c e c | B d f d B d f d | c e g e c e g2 |
+[V:2] !mp! b d' f' d' b d' f' d' | c' e' g' e' c' e' g' e' | d' f' a' f' d' f' a' f' | e' g' e' c' e' g' e'2 |
+[V:3] !mp! E,,4 G,,4 | A,,4 E,4 | B,,4 F,,4 | A,,4 E,4 |
+[V:1] e g b g e g b g | d f a f d f a2 | f d B G E G E2 | B G E G E4 |
+[V:2] g' b' g' e' g' b' g'2 | f' d' f' a' f' d' f'2 | d' b g b d' b g2 | b2 g2 e'4 |
+[V:3] E,,4 B,,4 | B,,4 F,,4 | E,,4 B,,4 | E,,8 |
+[V:1] !mp! E2 G2 B2 G2 | E2 G2 B2 G2 | A2 c2 e2 c2 | A2 c2 e2 c2 |
+[V:2] !mp! g2 b2 d'2 b2 | g2 b2 d'2 b2 | c'2 e'2 g'2 e'2 | c'2 e'2 g'2 e'2 |
+[V:3] !mp! E,,2 B,,2 E,2 B,,2 | E,,2 G,,2 B,,2 E,2 | A,,2 E,2 A,,2 E,2 | A,,2 C,2 E,2 A,,2 |
+[V:1] B2 d2 f2 d2 | d2 f2 a2 d2 | B2 G2 E2 G2 | E8 |
+[V:2] d'2 f'2 a'2 f'2 | d'2 f'2 a'2 d'2 | d'2 b2 g2 e2 | g4 e4 |
+[V:3] B,,2 F,,2 B,,2 D,2 | B,,2 F,,2 A,,2 F,,2 | E,,2 G,,2 B,,2 G,,2 | E,,8 |
+[V:1] !mf! e g b g e g b g | g b d' b g b d' b | a c' e' c' a c' e' c' | f a c' a f a c'2 |
+[V:2] !mf! c' e' g' e' c' e' g' e' | e' g' b' g' e' g' b'2 | f' a' f' d' f' a' f'2 | d' f' a' f' d' f' d'2 |
+[V:3] !mf! E,,2 B,,2 E,2 B,,2 | E,,2 G,,2 B,,2 G,,2 | A,,2 E,2 A,2 E,2 | F,,2 C,2 F,2 C,2 |
+[V:1] e g b g e g b2 | d f a f d B G2 | E G B G E G E2 | G B G E E4 |
+[V:2] c' e' g' e' c' e' g'2 | a f d f a f d2 | b g e g b g e2 | g4 e4 |
+[V:3] E,,2 G,,2 B,,2 E,2 | B,,2 F,,2 D,2 B,,2 | E,,2 B,,2 E,2 G,2 | E,,8 |
+[V:1] !mf! c e g e c e g e | B d f d B d f2 | A c e c A c e2 | G B d B G B G2 |
+[V:2] !mf! e' c' e' g' e' c' e'2 | f' d' f' a' f' d' f'2 | e' c' e' g' e' c' e'2 | d' b d' f' d' b d'2 |
+[V:3] !mf! A,,2 E,2 A,,2 C,2 | B,,2 F,,2 B,,2 D,2 | A,,2 E,2 C,2 A,,2 | E,,2 B,,2 E,2 B,,2 |
+[V:1] !mp! F A c A F A F2 | G B d B G B G2 | A c e c A c A2 | G B G E E4 |
+[V:2] !mp! e' c' a c' e' c' a2 | d' b g b d' b g2 | e' c' a c' e' c' a2 | b2 g2 e'4 |
+[V:3] !mp! F,,2 C,2 F,,2 A,,2 | E,,2 G,,2 B,,2 E,2 | A,,2 E,2 A,,2 E,2 | E,,4 B,,2 E,,2 |
+[V:1] !mp! E G B G E G B2 | G B d B G B G2 | A c e c A c e2 | F A c A F A F2 |
+[V:2] !mp! g b d' b g b d'2 | b d' f' d' b d' b2 | c' e' g' e' c' e' g'2 | a c' e' c' a c' a2 |
+[V:3] !mp! E,,4 B,,4 | E,,4 G,,4 | A,,4 E,4 | F,,4 C,4 |
+[V:1] G B d B G B d2 | d f a f d f d2 | B G E G B G E2 | G B G E E4 |
+[V:2] b d' f' d' b d' f'2 | a f d f a f d2 | d' b g b d' b g2 | b2 g2 e'4 |
+[V:3] E,,4 B,,4 | B,,4 F,,4 | E,,4 G,,4 | E,,8 |
+[V:1] !p! E G B G E G B G | G B G E G B G2 | A c e c A c e2 | G B d B G B G2 |
+[V:2] !p! g b d' b g b d' b | b d' b g b d' b2 | c' e' g' e' c' e' g'2 | b d' f' d' b d' b2 |
+[V:3] !p! E,,4 B,,4 | E,,4 E,4 | A,,4 E,4 | E,,4 G,,4 |
+[V:1] F A c A F A F2 | d B G E G B G2 | E G B G E G E2 | E8 |
+[V:2] a c' e' c' a c' a2 | f' d' b g b d' b2 | g b d' b g b g2 | e'8 |
+[V:3] F,,4 C,4 | E,,4 B,,4 | E,,4 G,,4 | E,,8 |

@@ -1,0 +1,55 @@
+X:1
+T:Neon Rooftop Dance
+R:country dance
+M:4/4
+L:1/8
+Q:1/4=129
+K:E
+V:1 name="Violin" clef=treble
+V:2 name="Flute" clef=treble
+V:3 name="Cello" clef=bass
+V:1
+!p! E G B d B G E2 | G B d B G E G2 | A c e c A F A2 | c e g e c A F2 |
+E G B d B G E2 | F A c e c A F2 | G B d B G E F2 | E G B G E4 |
+!mp! e g b g e c A2 | g b d' b g e c2 | a c' e' c' a f a2 | f a c' a f d B2 |
+e g b d' b g e2 | f a c' a f d B2 | g b d' b g e f2 | e g b g e4 |
+!mp! A c e c A F A2 | c e g e c A F2 | E G B d B G E2 | F A c e c A F2 |
+G B d B G E G2 | c e g e c e g2 | B d f a f d B2 | E G B G E4 |
+!mp! e g b g e g b2 | a c' e' c' a c' e'2 | g b d' b g b d'2 | f a c' a f a c'2 |
+e g b g e c A2 | d f a f d B d2 | f a c' a f d B2 | e g b g e4 |
+!mf! e g b d' b g e2 | g b d' f' d' b g2 | a c' e' c' a f d2 | f a c' e' c' a f2 |
+g b d' b g e c2 | e g b g e c A2 | f a c' a f d B2 | e g b g e4 |
+!mp! c e g e c A F2 | A c e c A F D2 | E G B d B G E2 | F A c e c A F2 |
+G B d B G E G2 | A c e c A F A2 | B d f a f d B2 | E G B G E4 |
+!p! E G B d B G E2 | A c e c A F A2 | F A c A F D F2 | d f a f d B d2 |
+E G B d B G E2 | c e g e c A c2 | F A c A F D B2 | E G B G E4 |
+V:2
+!p! G B d f d B G2 | B d f d B G B2 | c e g e c A c2 | e g b g e c A2 |
+G B d f d B G2 | A c e g e c A2 | B d f d B G A2 | G B d B G4 |
+!mp! g b d' b g e c2 | b d' f' d' b g e2 | c' e' g' e' c' a c'2 | a c' e' c' a f d2 |
+g b d' f' d' b g2 | a c' e' c' a f d2 | b d' f' d' b g a2 | g b d' b g4 |
+!mp! c e g e c A c2 | e g b g e c A2 | G B d f d B G2 | A c e g e c A2 |
+B d f d B G B2 | e g b g e g b2 | d f a c' a f d2 | G B d B G4 |
+!mp! g b d' b g b d'2 | c' e' g' e' c' e' g'2 | b d' f' d' b d' f'2 | a c' e' c' a c' e'2 |
+g b d' b g e c2 | f a c' a f d f2 | a c' e' c' a f d2 | g b d' b g4 |
+!mf! g b d' f' d' b g2 | b d' f' a' f' d' b2 | c' e' g' e' c' a f2 | a c' e' g' e' c' a2 |
+b d' f' d' b g e2 | g b d' b g e c2 | a c' e' c' a f d2 | g b d' b g4 |
+!mp! e g b g e c A2 | c e g e c A F2 | G B d f d B G2 | A c e g e c A2 |
+B d f d B G B2 | c e g e c A c2 | d f a c' a f d2 | G B d B G4 |
+!p! G B d f d B G2 | c e g e c A c2 | A c e c A F A2 | f a c' a f d f2 |
+G B d f d B G2 | e g b g e c e2 | A c e c A F d2 | G B d B G4 |
+V:3
+!p! E,,2 G,,2 B,,2 G,,2 | E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | C,2 E,2 G,2 E,2 |
+E,,2 G,,2 B,,2 G,,2 | F,,2 A,,2 C,2 A,,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!mp! E,,2 G,,2 B,,2 G,,2 | G,,2 B,,2 D,2 B,,2 | A,,2 C,2 E,2 C,2 | B,,2 D,2 F,2 D,2 |
+E,,2 G,,2 B,,2 G,,2 | B,,2 D,2 F,2 D,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!mp! A,,2 C,2 E,2 C,2 | A,,2 C,2 E,2 C,2 | E,,2 G,,2 B,,2 G,,2 | F,,2 A,,2 C,2 A,,2 |
+E,,2 G,,2 B,,2 G,,2 | C,2 E,2 G,2 E,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!mp! E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | G,,2 B,,2 D,2 B,,2 | F,,2 A,,2 C,2 A,,2 |
+E,,2 G,,2 B,,2 G,,2 | B,,2 D,2 F,2 D,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!mf! E,,2 G,,2 B,,2 G,,2 | E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | F,,2 A,,2 C,2 A,,2 |
+E,,2 G,,2 B,,2 G,,2 | E,,2 G,,2 B,,2 G,,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!mp! A,,2 C,2 E,2 C,2 | A,,2 C,2 E,2 C,2 | E,,2 G,,2 B,,2 G,,2 | F,,2 A,,2 C,2 A,,2 |
+E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |
+!p! E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | F,,2 A,,2 C,2 A,,2 | B,,2 D,2 F,2 D,2 |
+E,,2 G,,2 B,,2 G,,2 | A,,2 C,2 E,2 C,2 | B,,2 D,2 F,2 D,2 | E,,4 E,,4 |

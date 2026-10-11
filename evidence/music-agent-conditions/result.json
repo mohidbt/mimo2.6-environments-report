@@ -1,0 +1,75 @@
+{
+  "task": "gK-0768",
+  "brief": "E major, 129 BPM, 4/4, about 56 bars, violin, flute, cello, English country dance",
+  "harness": "one chat completion. Music training sets multi_turn off and has no task image, so this is not a mimoagent tool loop inside a container.",
+  "model": "xai/grok-4.7",
+  "temperature": 1.0,
+  "gateway": "https://api-gateway.merge.dev/v1/openai/chat/completions",
+  "runs": {
+    "full_info": {
+      "reasoning_effort": "medium",
+      "max_tokens": 16000,
+      "submission": "byte-identical to evidence/music-prompt-ignored/piece.abc",
+      "brief_followed": false,
+      "reward": 0.827,
+      "reward_contradictory_constraints": 0.827,
+      "usage": {
+        "prompt_tokens": 5000,
+        "completion_tokens": 3402,
+        "total_tokens": 8512,
+        "cost": 0.028684
+      },
+      "criterion": "pass"
+    },
+    "minimal_hint": {
+      "reasoning_effort": "high",
+      "max_tokens": 40000,
+      "finish": "stop",
+      "submission": "hint.txt",
+      "headers": {
+        "key": "E",
+        "meter": "4/4",
+        "tempo": 129,
+        "voices": [
+          "Violin",
+          "Flute",
+          "Cello"
+        ]
+      },
+      "brief_followed": true,
+      "reward": 0.77,
+      "reward_contradictory_constraints": 0.77,
+      "usage": {
+        "prompt_tokens": 1471,
+        "completion_tokens": 1929,
+        "total_tokens": 25133,
+        "cost": 0.012788
+      },
+      "criterion": "tbd"
+    },
+    "no_info": {
+      "reasoning_effort": "high",
+      "max_tokens": 16000,
+      "finish": "stop",
+      "submission": "no-info.txt",
+      "headers": {
+        "key": "E",
+        "meter": "4/4",
+        "tempo": 129,
+        "voices": 3,
+        "v1_bar_pipes": 56
+      },
+      "brief_followed": true,
+      "reward": 0.735,
+      "reward_contradictory_constraints": 0.735,
+      "usage": {
+        "prompt_tokens": 1422,
+        "completion_tokens": 2119,
+        "total_tokens": 34218,
+        "cost": 0.01383
+      },
+      "criterion": "tbd"
+    }
+  },
+  "not_counted": "xhigh calls returned a timeout and a 502 and produced no score. One high-effort hint call stopped at max_tokens 16000 before the answer closed. Those are omitted."
+}

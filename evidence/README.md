@@ -42,6 +42,7 @@ All four checks use Paramiko task `candidate-2535-security-cryptography`.
 | Check | Evidence |
 | --- | --- |
 | Music scorer ignores the brief | [Pieces and scores](music-prompt-ignored/) |
+| Music agent under three information conditions | [Prompts, answers, scores](music-agent-conditions/result.json) |
 | Forged crash text on one security image | [Parser and live submits](security-forged-trace/result.json) |
 | Empty rubric submission on the most rule-weighted task | [Item scores](rubric-empty-submission/result.json) |
 | Website reward floors and runtime gate | [Cases](website-reward-floors/result.json) |
