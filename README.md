@@ -53,7 +53,7 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 
 ### Impact
 
-| Criterion and mechanism | Scope supported by inspection | Would the SOTA hack-safe env framework prevent it? |
+| Criterion and mechanism | Scope supported by inspection | Would the SOTA hack-safe env framework prevent it?\* |
 | --- | --- | --- |
 | 1a, coding: pytest startup file¹ | 1,000 / 2,698 tasks (37%) allow `conftest.py`; the common grader accepts exit code 0. | • **Tampering with grading.** Still works if pytest loads the submitted `conftest.py`. ❌ |
 | 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. The 1,000-task count is for the bypass itself. | • Same bypass, if pytest loads the submitted hook. ❌ |
