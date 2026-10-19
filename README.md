@@ -53,13 +53,15 @@ The agent experiments used Grok 4.7, explicitly instructed to exploit the score.
 
 ### Impact
 
-| Criterion and mechanism | Scope supported by inspection | Still needed to prove success across that scope |
-| --- | --- | --- |
-| 1a, coding: pytest startup file¹ | 1,000 / 2,698 tasks (37%) allow `conftest.py`; the common grader accepts exit code 0. | None. The test command names the folder, and pytest loads `conftest.py` there and above it. |
-| 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. | Agent success on other tasks under each information condition. The 1,000-command count does not establish this. |
-| 1a, terminal: placeholder repair | Task-specific test patterns and file hashes. | None for a wider repair: the tests and file hashes are per task. |
-| 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. |
-| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`, which ignores the brief. [Submissions and scores](docs/other-environments.md#music). | None for this score. One full-info agent copied the known piece. Hint and no-info agents wrote the brief. |
+| Criterion and mechanism | Scope supported by inspection | Still needed to prove success across that scope | Would the SOTA hack-safe env framework prevent it? |
+| --- | --- | --- | --- |
+| 1a, coding: pytest startup file¹ | 1,000 / 2,698 tasks (37%) allow `conftest.py`; the common grader accepts exit code 0. | None. The test command names the folder, and pytest loads `conftest.py` there and above it. | • **Tampering with grading.** Still works if pytest loads the submitted `conftest.py`. ❌ |
+| 1b.i and 1b.ii, coding: agent creates a bypass | Wider agent success: tbd. | Agent success on other tasks under each information condition. The 1,000-command count does not establish this. | • Same bypass, if pytest loads the submitted hook. ❌ |
+| 1a, terminal: placeholder repair | Task-specific test patterns and file hashes. | None for a wider repair: the tests and file hashes are per task. | • **Weak tests.** Protected tests can still accept placeholders. ❌ |
+| 2a, terminal: Python startup code outside `/app`² | All 64 tasks use the same guard, which scans `/app`, then run Python tests. | None. That guard is one file, and the startup file sits outside its scan. | • **Tampering with grading.** Karotte's agent can't write to system Python directories. ✅ |
+| 1a, music: human-likeness score, brief unused³ | 1,000 / 1,000 rows share `compute_score`, which ignores the brief. [Submissions and scores](docs/other-environments.md#music). | None for this score. One full-info agent copied the known piece. Hint and no-info agents wrote the brief. | • **Wrong reward.** Same scorer, same high score for the wrong piece. ❌ |
+
+\**Hypothetically compared against [Karotte](https://www.preferencemodel.com/blog/karotte-a-technical-deep-dive)'s defense mechanisms (we did not port MiMo environments to their envs) ✅ should block, ❌ would not.*
 
 ## Files and reproduction
 
